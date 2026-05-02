@@ -2,65 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hongyi Li</title>
 
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
       background: #f7f7f7;
       color: #222;
-      line-height: 1.6;
     }
 
     .container {
       max-width: 900px;
       margin: 40px auto;
-      background: #fff;
-      padding: 42px;
+      background: white;
+      padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .top {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 140px;
+      border-radius: 10px;
     }
 
     h1 {
-      margin: 0 0 8px;
-      font-size: 34px;
+      margin: 0;
     }
 
     .info {
       color: #555;
-      margin-bottom: 24px;
+      margin-top: 10px;
     }
 
     h2 {
-      margin-top: 42px;
-      padding-bottom: 8px;
+      margin-top: 40px;
       border-bottom: 2px solid #eee;
-      font-size: 24px;
+      padding-bottom: 6px;
     }
 
     .publication {
-      margin: 24px 0;
+      margin: 22px 0;
     }
 
     .pub-title {
       font-weight: 600;
-      font-size: 17px;
-    }
-
-    .pub-authors {
-      margin-top: 4px;
-    }
-
-    .pub-venue {
-      color: #555;
-      margin-top: 4px;
     }
 
     .buttons {
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     .button {
@@ -70,7 +67,7 @@
       border: 1px solid #0066cc;
       border-radius: 6px;
       color: #0066cc;
-      font-size: 14px;
+      font-size: 13px;
       text-decoration: none;
     }
 
@@ -78,104 +75,95 @@
       background: #0066cc;
       color: white;
     }
-
-    a {
-      color: #0066cc;
-    }
-
-    footer {
-      margin-top: 50px;
-      color: #777;
-      font-size: 14px;
-      text-align: center;
-    }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Hongyi Li</h1>
 
-    <div class="info">
-      Ph.D. Student in Control Science and Engineering<br />
-      Harbin Institute of Technology, Shenzhen<br />
-      Email: <a href="mailto:23b904015@stu.hit.edu.cn">23b904015@stu.hit.edu.cn</a><br />
-      GitHub: <a href="https://github.com/Hongyi-Li-sz">Hongyi-Li-sz</a>
+<div class="container">
+
+  <div class="top">
+    <img src="avatar.jpg" class="avatar" />
+
+    <div>
+      <h1>Hongyi Li</h1>
+      <div class="info">
+        Ph.D. Student, HIT Shenzhen<br>
+        Email: 23b904015@stu.hit.edu.cn<br>
+        GitHub: <a href="https://github.com/Hongyi-Li-sz">Hongyi-Li-sz</a>
+      </div>
     </div>
-
-    <p>
-      I am a Ph.D. student in Control Science and Engineering at Harbin Institute of Technology.
-      My research interests include machine learning, optimization, interpretable tree-based models,
-      piecewise linear modeling, model predictive control, and distributed optimization.
-    </p>
-
-    <h2>Publications</h2>
-
-    <div id="publications"></div>
-
-    <footer>
-      © 2026 Hongyi Li
-    </footer>
   </div>
 
-  <script>
-    const publications = [
-      {
-        year: 2026,
-        title: "Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting",
-        authors: "<strong>Hongyi Li</strong>, Han Lin, and Jun Xu",
-        venue: "International Conference on Learning Representations (ICLR), 2026",
-        pdf: "https://arxiv.org/pdf/2602.05371",
-        paper: "https://openreview.net/forum?id=3pZwJB6SX9",
-        code: "https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree"
-      },
-      {
-        year: 2026,
-        title: "Distributed Model Predictive Control for Energy and Comfort Optimization in Large Buildings Using Piecewise Affine Approximation",
-        authors: "<strong>Hongyi Li</strong>, Jun Xu, and Jin-Feng Liu",
-        venue: "IEEE Robotics and Automation Letters, 2026",
-        pdf: "https://arxiv.org/pdf/2602.05376",
-        paper: "https://doi.org/10.1109/LRA.2026.3665065"
-      },
-      {
-        year: 2025,
-        title: "Priority-Based Energy Allocation in Buildings Through Distributed Model Predictive Control",
-        authors: "<strong>Hongyi Li</strong>, Jun Xu, and Qianchuan Zhao",
-        venue: "IEEE Transactions on Automation Science and Engineering, 2025",
-        pdf: "https://arxiv.org/pdf/2403.13648",
-        paper: "https://doi.org/10.1109/TASE.2024.3464612"
-      },
-      {
-        year: 2024,
-        title: "Economic Model Predictive Control in Buildings Based on Piecewise Linear Approximation of Predicted Mean Vote Index",
-        authors: "<strong>Hongyi Li</strong>, Jun Xu, Qianchuan Zhao, and Sixin Wang",
-        venue: "IEEE Transactions on Automation Science and Engineering, 2024",
-        pdf: "https://doi.org/10.1109/TASE.2023.3279278",
-        paper: "https://doi.org/10.1109/TASE.2023.3279278"
-      }
-    ];
+  <p>
+    I am a Ph.D. student focusing on machine learning, optimization, and intelligent control.
+    My research includes interpretable models, tree methods, and model predictive control.
+  </p>
 
-    publications.sort((a, b) => b.year - a.year);
+  <h2>Publications</h2>
+  <div id="publications"></div>
 
-    const container = document.getElementById("publications");
+</div>
 
-    publications.forEach(pub => {
-      const div = document.createElement("div");
-      div.className = "publication";
+<script>
+const publications = [
+  {
+    year: 2026,
+    title: "Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting",
+    authors: "<strong>Hongyi Li</strong>, Han Lin, and Jun Xu",
+    venue: "ICLR 2026",
+    pdf: "https://arxiv.org/pdf/2602.05371",
+    paper: "https://openreview.net/forum?id=3pZwJB6SX9",
+    code: "https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree"
+  },
+  {
+    year: 2026,
+    title: "Distributed MPC for Energy and Comfort Optimization in Buildings",
+    authors: "<strong>Hongyi Li</strong>, Jun Xu, and Jin-Feng Liu",
+    venue: "IEEE RA-L 2026",
+    pdf: "https://arxiv.org/pdf/2602.05376",
+    paper: "https://doi.org/10.1109/LRA.2026.3665065"
+  },
+  {
+    year: 2025,
+    title: "Priority-Based Energy Allocation in Buildings",
+    authors: "<strong>Hongyi Li</strong>, Jun Xu, and Qianchuan Zhao",
+    venue: "IEEE TASE 2025",
+    pdf: "https://arxiv.org/pdf/2403.13648",
+    paper: "https://doi.org/10.1109/TASE.2024.3464612"
+  },
+  {
+    year: 2024,
+    title: "Economic MPC in Buildings via Piecewise Linear Approximation",
+    authors: "<strong>Hongyi Li</strong>, Jun Xu, Q. Zhao, and S. Wang",
+    venue: "IEEE TASE 2024",
+    pdf: "https://doi.org/10.1109/TASE.2023.3279278",
+    paper: "https://doi.org/10.1109/TASE.2023.3279278"
+  }
+];
 
-      div.innerHTML = `
-        <div class="pub-title">${pub.title}</div>
-        <div class="pub-authors">${pub.authors}</div>
-        <div class="pub-venue">${pub.venue}</div>
-        <div class="buttons">
-          <a class="button" href="${pub.pdf}" target="_blank">PDF</a>
-          <a class="button" href="${pub.paper}" target="_blank">Paper</a>
-          ${pub.code ? `<a class="button" href="${pub.code}" target="_blank">Code</a>` : ""}
-        </div>
-      `;
+publications.sort((a, b) => b.year - a.year);
 
-      container.appendChild(div);
-    });
-  </script>
+const container = document.getElementById("publications");
+
+publications.forEach(pub => {
+  const div = document.createElement("div");
+  div.className = "publication";
+
+  div.innerHTML = `
+    <div class="pub-title">${pub.title}</div>
+    <div>${pub.authors}</div>
+    <div>${pub.venue}</div>
+    <div class="buttons">
+      <a class="button" href="${pub.pdf}" target="_blank">PDF</a>
+      <a class="button" href="${pub.paper}" target="_blank">Paper</a>
+      ${pub.code ? `<a class="button" href="${pub.code}" target="_blank">Code</a>` : ""}
+    </div>
+  `;
+
+  container.appendChild(div);
+});
+</script>
+
 </body>
 </html>
