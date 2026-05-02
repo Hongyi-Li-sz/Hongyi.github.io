@@ -191,21 +191,20 @@ publications.forEach(pub => {
   div.className = "publication";
 
 
-  div.innerHTML = `
-    <div class="pub-title">
-      ${pub.title}
-      <span class="buttons">
-        ${pub.pdf ? `<a class="button" href="${pub.pdf}" target="_blank">PDF</a>` : ""}
-        ${pub.paper ? `<a class="button" href="${pub.paper}" target="_blank">Paper</a>` : ""}
-        ${pub.code ? `<a class="button" href="${pub.code}" target="_blank">Code</a>` : ""}
-      </span>
-    </div>
-    <div>
-      ${pub.authors}
-      ${pub.firstAuthor ? `<span class="tag">First Author</span>` : ""}
-    </div>
-    <div>${pub.venue}</div>
+div.innerHTML = `
+  <div class="pub-title">${pub.title}</div>
+  <div>
+    ${pub.authors}
+    ${pub.firstAuthor ? `<span class="tag">First Author</span>` : ""}
+  </div>
+  <div>${pub.venue}</div>
+  <div class="buttons">
+    ${pub.pdf ? `<a class="button" href="${pub.pdf}" target="_blank">PDF</a>` : ""}
+    ${pub.paper ? `<a class="button" href="${pub.paper}" target="_blank">Paper</a>` : ""}
+    ${pub.code ? `<a class="button" href="${pub.code}" target="_blank">Code</a>` : ""}
+  </div>
 `;
+
 
 
   container.appendChild(div);
