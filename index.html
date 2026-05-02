@@ -24,7 +24,6 @@
       font-weight: 500;
     }
 
-
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -141,7 +140,8 @@ const publications = [
     title: "Interpretable Multi-Agent Reinforcement Learning for Traffic Signal Control: Influence Mechanism and Piecewise Linear Approximation",
     authors: "Zhiyue Luo, <strong>Hongyi Li</strong>, Jun Xu, and Fanglin Chen",
     venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
-    paper: "https://doi.org/10.1109/TASE.2025.3618243"
+    paper: "https://doi.org/10.1109/TASE.2025.3618243",
+    firstAuthor: false
   },
   {
     year: 2026,
@@ -150,7 +150,8 @@ const publications = [
     venue: "International Conference on Learning Representations (ICLR), 2026",
     pdf: "https://arxiv.org/pdf/2602.05371",
     paper: "https://openreview.net/forum?id=3pZwJB6SX9",
-    code: "https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree"
+    code: "https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree",
+    firstAuthor: true
   },
   {
     year: 2026,
@@ -158,7 +159,8 @@ const publications = [
     authors: "<strong>Hongyi Li</strong>, Jun Xu, and Jin-Feng Liu",
     venue: "IEEE Robotics and Automation Letters (IEEE RA-L), 2026",
     pdf: "https://arxiv.org/pdf/2602.05376",
-    paper: "https://doi.org/10.1109/LRA.2026.3665065"
+    paper: "https://doi.org/10.1109/LRA.2026.3665065",
+    firstAuthor: true
   },
   {
     year: 2025,
@@ -166,7 +168,8 @@ const publications = [
     authors: "<strong>Hongyi Li</strong>, Jun Xu, and Qianchuan Zhao",
     venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
     pdf: "https://arxiv.org/pdf/2403.13648",
-    paper: "https://doi.org/10.1109/TASE.2024.3464612"
+    paper: "https://doi.org/10.1109/TASE.2024.3464612",
+    firstAuthor: true
   },
   {
     year: 2024,
@@ -174,6 +177,8 @@ const publications = [
     authors: "<strong>Hongyi Li</strong>, Jun Xu, Qianchuan Zhao, and Sixin Wang",
     venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2024",
     pdf: "https://doi.org/10.1109/TASE.2023.3279278",
+    paper: "https://doi.org/10.1109/TASE.2023.3279278",
+    firstAuthor: true
   }
 ];
 
@@ -187,15 +192,17 @@ publications.forEach(pub => {
 
   div.innerHTML = `
     <div class="pub-title">${pub.title}</div>
-    <div>${pub.authors} <span class="tag">First Author</span></div>
+    <div>
+      ${pub.authors}
+      ${pub.firstAuthor ? `<span class="tag">First Author</span>` : ""}
+    </div>
     <div>${pub.venue}</div>
     <div class="buttons">
-      <a class="button" href="${pub.pdf}" target="_blank">PDF</a>
-      <a class="button" href="${pub.paper}" target="_blank">Paper</a>
+      ${pub.pdf ? `<a class="button" href="${pub.pdf}" target="_blank">PDF</a>` : ""}
+      ${pub.paper ? `<a class="button" href="${pub.paper}" target="_blank">Paper</a>` : ""}
       ${pub.code ? `<a class="button" href="${pub.code}" target="_blank">Code</a>` : ""}
     </div>
   `;
-
 
   container.appendChild(div);
 });
