@@ -13,6 +13,18 @@
       color: #222;
     }
 
+    .tag {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 7px;
+      border-radius: 10px;
+      background: #eef5ff;
+      color: #0066cc;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -24,12 +36,17 @@
 
     .top {
       display: flex;
-      gap: 30px;
+      justify-content: space-between;
       align-items: center;
+      gap: 20px;
+    }
+
+    .left {
+      flex: 1;
     }
 
     .avatar {
-      width: 140px;
+      width: 150px;
       border-radius: 10px;
     }
 
@@ -75,6 +92,15 @@
       background: #0066cc;
       color: white;
     }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -83,21 +109,24 @@
 <div class="container">
 
   <div class="top">
-    <img src="avatar.jpg" class="avatar" />
-
-    <div>
+    <div class="left">
       <h1>Hongyi Li</h1>
+
       <div class="info">
-        Ph.D. Student, HIT Shenzhen<br>
-        Email: 23b904015@stu.hit.edu.cn<br>
+        Ph.D. Student in Control Science and Engineering<br>
+        Harbin Institute of Technology, Shenzhen<br>
+        Email: <a href="mailto:23b904015@stu.hit.edu.cn">23b904015@stu.hit.edu.cn</a><br>
         GitHub: <a href="https://github.com/Hongyi-Li-sz">Hongyi-Li-sz</a>
       </div>
     </div>
+
+    <img src="avatar.jpg" class="avatar">
   </div>
 
   <p>
     I am a Ph.D. student focusing on machine learning, optimization, and intelligent control.
-    My research includes interpretable models, tree methods, and model predictive control.
+    My research interests include interpretable machine learning, tree-based models, piecewise linear modeling,
+    model predictive control (MPC), and distributed optimization.
   </p>
 
   <h2>Publications</h2>
@@ -111,32 +140,32 @@ const publications = [
     year: 2026,
     title: "Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting",
     authors: "<strong>Hongyi Li</strong>, Han Lin, and Jun Xu",
-    venue: "ICLR 2026",
+    venue: "International Conference on Learning Representations (ICLR), 2026",
     pdf: "https://arxiv.org/pdf/2602.05371",
     paper: "https://openreview.net/forum?id=3pZwJB6SX9",
     code: "https://github.com/Hongyi-Li-sz/Hinge-Regression-Tree"
   },
   {
     year: 2026,
-    title: "Distributed MPC for Energy and Comfort Optimization in Buildings",
+    title: "Distributed Model Predictive Control for Energy and Comfort Optimization in Large Buildings Using Piecewise Affine Approximation",
     authors: "<strong>Hongyi Li</strong>, Jun Xu, and Jin-Feng Liu",
-    venue: "IEEE RA-L 2026",
+    venue: "IEEE Robotics and Automation Letters (IEEE RA-L), 2026",
     pdf: "https://arxiv.org/pdf/2602.05376",
     paper: "https://doi.org/10.1109/LRA.2026.3665065"
   },
   {
     year: 2025,
-    title: "Priority-Based Energy Allocation in Buildings",
+    title: "Priority-Based Energy Allocation in Buildings Through Distributed Model Predictive Control",
     authors: "<strong>Hongyi Li</strong>, Jun Xu, and Qianchuan Zhao",
-    venue: "IEEE TASE 2025",
+    venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2025",
     pdf: "https://arxiv.org/pdf/2403.13648",
     paper: "https://doi.org/10.1109/TASE.2024.3464612"
   },
   {
     year: 2024,
-    title: "Economic MPC in Buildings via Piecewise Linear Approximation",
-    authors: "<strong>Hongyi Li</strong>, Jun Xu, Q. Zhao, and S. Wang",
-    venue: "IEEE TASE 2024",
+    title: "Economic Model Predictive Control in Buildings Based on Piecewise Linear Approximation of Predicted Mean Vote Index",
+    authors: "<strong>Hongyi Li</strong>, Jun Xu, Qianchuan Zhao, and Sixin Wang",
+    venue: "IEEE Transactions on Automation Science and Engineering (IEEE TASE), 2024",
     pdf: "https://doi.org/10.1109/TASE.2023.3279278",
     paper: "https://doi.org/10.1109/TASE.2023.3279278"
   }
@@ -152,7 +181,7 @@ publications.forEach(pub => {
 
   div.innerHTML = `
     <div class="pub-title">${pub.title}</div>
-    <div>${pub.authors}</div>
+    <div>${pub.authors} <span class="tag">First Author</span></div>
     <div>${pub.venue}</div>
     <div class="buttons">
       <a class="button" href="${pub.pdf}" target="_blank">PDF</a>
@@ -160,6 +189,7 @@ publications.forEach(pub => {
       ${pub.code ? `<a class="button" href="${pub.code}" target="_blank">Code</a>` : ""}
     </div>
   `;
+
 
   container.appendChild(div);
 });
